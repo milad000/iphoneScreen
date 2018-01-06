@@ -1,0 +1,36 @@
+.calender-on{
+    max-width: $grid-width;
+    padding:.5rem;
+}
+.calender-line{
+    max-width: inherit;
+    margin: 0 auto;
+    &:not(:last-child){
+        margin-bottom: $gutter-vertical-calender;
+    }
+    
+    @include clearfix;
+    
+    [class^="cal-"]{
+        float: left;
+        padding: .2rem;
+    
+        &:not(:last-child){
+            margin-right: $gutter-horizontal-calender;
+        }
+    }
+
+    .cal-1{
+        width: 100%;
+    }
+
+    .cal-7{
+        width: calc((100% - 6*#{$gutter-horizontal-calender}) / 7);
+        &:nth-child(+n+6){
+            color: red;
+        }
+    }
+}
+.demo-cal{
+    [class^="cal-"]{font-size: 1rem}
+}

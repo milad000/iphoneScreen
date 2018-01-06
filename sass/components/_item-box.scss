@@ -1,0 +1,24 @@
+.item-box{
+    height: 20rem;
+    width: 100%;
+    background-color: rgba($color:white, $alpha: 1);
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 .1rem 1rem rgba($gray-dark ,.9);
+
+    &__img{
+        // @include obj-center;
+        width: 100%;
+        // overflow: hidden;
+        margin-bottom: .5rem;
+        display: inline-block;
+        z-index: 5;
+    }
+    &:hover{
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 .2rem 2rem rgba($gray-dark ,.7);
+        transition: all .3s;
+    }
+}

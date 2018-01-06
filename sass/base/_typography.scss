@@ -1,0 +1,108 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.7;
+  color: $purple-base;
+}
+
+.heading-primary {
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+  text-align: left;
+
+  &--main {
+    display: block;
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 2.3rem;
+    //CHANGE TEXT COLOR TO GRADIENT
+    // background-image: url(../../img/iphone-1.jpg);
+    // -webkit-background-clip: text;
+    // color: transparent;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
+
+  &--sub {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.88rem;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
+}
+
+
+
+.heading-secondary {
+  font-size: 3.5rem;
+  font-weight: 700;
+  display: inline-block;
+  color: $purple-dark;
+  //CHANGE TEXT COLOR TO GRADIENT
+  // background-image: linear-gradient(to right, rgba(pink,1),rgba($purple-dark,.5));
+  // -webkit-background-clip: text;
+  // color: transparent;
+
+  &:hover {
+    transition: all 0.3s;
+    text-shadow: 0.5rem 1rem 5rem rgba($purple-dark, 0.6);
+  }
+}
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragragh {
+  color: $purple-light;
+  font-size: 1.6rem;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+.heading-card {
+  &__title {
+    text-transform: uppercase;
+    margin-top: 4rem;
+    font-weight: 700;
+    &--front {
+      font-size: 1.6rem;
+      color: white;
+      margin-left: 4rem;
+    }
+    &--back {
+      font-size: 3rem;
+      color: $purple-base;
+      text-align: center;
+    }
+  }
+  &__info {
+    font-size: 1.2rem;
+
+    &--front {
+      font-weight: 300;
+      color: white;
+      margin-left: 4rem;
+      margin-top: 9rem;
+    }
+    &--back {
+      color: $purple-base;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    &--front-2nd {
+      font-weight: 300;
+      margin-left: 4rem;
+      margin-top: 0.1rem;
+    }
+  }
+}
