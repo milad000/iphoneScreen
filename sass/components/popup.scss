@@ -33,6 +33,9 @@
   &__left {
     width: 33.33333%;
     display: table-cell;
+    vertical-align: bottom;
+    bottom:0;
+
   }
   &__right {
     width: 66.666667%;
