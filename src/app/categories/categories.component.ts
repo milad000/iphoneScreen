@@ -11,18 +11,18 @@ export class CategoriesComponent implements OnInit {
   index: number;
   rowNumber: number[];
   categories: Categories[] = [
-    new Categories("iphone", "5", "/assets/img/iphone-5.jpg"),
-    new Categories("iphone", "5c", "/assets/img/iphone-5c.jpg"),
-    new Categories("iphone", "5s", "/assets/img/iphone-5s.jpg"),
-    new Categories("iphone", "6", "/assets/img/iphone-6.jpg"),
-    new Categories("iphone", "6 plus", "/assets/img/iphone-6.jpg"),
-    new Categories("iphone", "6s", "/assets/img/iphone-6.jpg"),
-    new Categories("iphone", "6s plus", "/assets/img/iphone-6s-plus.jpg"),
-    new Categories("iphone", "7", "/assets/img/iphone-7.jpg"),
-    new Categories("iphone", "7 plus", "/assets/img/iphone-7-plus-r.jpg"),
-    new Categories("iphone", "8", "/assets/img/iphone-8.jpg"),
-    new Categories("iphone", "8 plus", "/assets/img/iphone-8-plus.jpg"),
-    new Categories("iphone", "X", "/assets/img/iphone-X.jpg")
+    new Categories("iphone", "5", "./assets/img/iphone-5.jpg"),
+    new Categories("iphone", "5c", "./assets/img/iphone-5c.jpg"),
+    new Categories("iphone", "5s", "./assets/img/iphone-5s.jpg"),
+    new Categories("iphone", "6", "./assets/img/iphone-6.jpg"),
+    new Categories("iphone", "6 plus", "./assets/img/iphone-6.jpg"),
+    new Categories("iphone", "6s", "./assets/img/iphone-6.jpg"),
+    new Categories("iphone", "6s plus", "./assets/img/iphone-6s-plus.jpg"),
+    new Categories("iphone", "7", "./assets/img/iphone-7.jpg"),
+    new Categories("iphone", "7 plus", "./assets/img/iphone-7-plus-r.jpg"),
+    new Categories("iphone", "8", "./assets/img/iphone-8.jpg"),
+    new Categories("iphone", "8 plus", "./assets/img/iphone-8-plus.jpg"),
+    new Categories("iphone", "X", "./assets/img/iphone-X.jpg")
   ];
 
   constructor() {

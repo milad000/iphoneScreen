@@ -5,9 +5,9 @@ export class Categories {
     public imagePath: string;
 
 
-    constructor(name: string, desc: string, imagePath: string,) {
-        this.name = name;
-        this.description = desc;
+    constructor(Name: string, description: string, imagePath: string) {
+        this.name = Name;
+        this.description = description;
         this.imagePath = imagePath;
     }
 }

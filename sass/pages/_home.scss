@@ -38,7 +38,7 @@
       rgba($purple-dark, 0.9)50%,
       rgba(white, 1)50%
     ),
-    url(/assets/img/iphone-1.jpg);
+    url(./assets/img/iphone-1.jpg);
   background-size: cover;
   // transform: skewY(-5deg);
 
@@ -70,6 +70,7 @@
 }
 
 .section-book {
+
   padding: 15rem 0;
   background-image: linear-gradient(
     to right top,
@@ -84,13 +85,13 @@
       rgba(white, 0.4)50%,
       transparent 50%
     ),
-    url(/assets/img/iphone-3.jpg);
+    url(./assets/img/iphone-3.jpg);
   background-size: 100%;
   background-position-y: 100%;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(black, 0.6);
 
-  height: 40rem;
+  height: 55rem;
 
   &__form {
     width: 50%;
