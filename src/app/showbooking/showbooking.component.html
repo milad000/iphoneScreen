@@ -1,30 +1,18 @@
 <section class="section-book">
     <div class="u-center-text">
         <h2 class="heading-secondary u-text-to-upper">
-            subscribe here!
+            You register here!
         </h2>
     </div>
     <div class="grid-on">
         <div class="row">
-            <div class="book">
-                <div class="book__form">
-
-                            <div class="grid-on">
-                                    <div class="row" *ngFor="let row of rowNumber; let i=index">
-                                        <div class="col-1-of-5 u-margin-t-small" *ngFor="let test of tests(i)">
-                                            <div class="item-box">
-                                                <h3 class="heading-quaternary">{{test.fullName}}</h3>
-                                                <p>{{test.email}}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                        <div class="form__group">
-                            <button class="btn btn__green u-margin-t-small" (click)="onFetch()">fetch data</button>
-                        </div>
-                   
+            <div class="col-1-of-5 u-margin-t-small" *ngFor="let data of booking">
+                <div class="item-box">
+                    <h3 class="heading-quaternary">{{data.fullName}}</h3>
+                    <p>{{data.email}}</p>
+                    <p>{{data.iphoneModel}}</p>
+                    <p>{{data.phoneNumber}}</p>
                 </div>
-
             </div>
         </div>
     </div>

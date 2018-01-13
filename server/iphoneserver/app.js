@@ -7,7 +7,7 @@ var passportlocalmongoose = require("passport-local-mongoose");
 
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/test4");
+mongoose.connect("mongodb://localhost/test5");
 
 //MODELS
 var jobs = require("./models/booking");

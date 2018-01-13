@@ -12,6 +12,7 @@ import { FooterComponent } from "./footer/footer.component";
 import { PopupComponent } from "./popup/popup.component";
 import { MenuComponent } from "./menu/menu.component";
 import { showBookingComponent } from "./showbooking/showbooking.component";
+import { AppService } from "./app.service";
 
 
 const appRoutes: Routes = [
@@ -32,7 +33,9 @@ const appRoutes: Routes = [
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule,
   RouterModule.forRoot(appRoutes)],
-  providers: [],
+  providers: [
+    AppService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

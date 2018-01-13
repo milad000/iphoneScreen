@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { NgForm, NgModel } from '@angular/forms';
-import { Booking } from '../shared/booking.model';
 import { Router , ActivatedRoute } from '@angular/router';
+
+
+import { Booking } from '../shared/booking.model';
+import { AppService } from '../app.service';
 
 
 
@@ -16,7 +19,8 @@ export class BookingComponent implements OnInit {
   
   constructor(private http:HttpClient,
               private router:Router,
-              private route: ActivatedRoute) { 
+              private route: ActivatedRoute,
+            private appService: AppService ) { 
   }
 
   ngOnInit() {
@@ -36,6 +40,11 @@ export class BookingComponent implements OnInit {
        console.log("JSON.stringify(form.value) : " + JSON.stringify(form.value));
       //  this.router.navigate(['#popup'],{relativeTo: this.route});
      });
+  }
+
+  onRefresh(){
+    console.log("you are in refresh <-");
+    this.appService.onRefresh();
   }
 
 }
