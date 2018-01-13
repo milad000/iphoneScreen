@@ -5,14 +5,12 @@ import { Router, ActivatedRoute } from "@angular/router";
 
 import { Booking } from "../shared/Booking.model";
 import { AppService } from "../app.service";
-
 @Component({
-  selector: "app-showbooking",
-  templateUrl: "./showbooking.component.html",
-  styleUrls: ["./showbooking.component.scss"]
+  selector: "app-registered-info",
+  templateUrl: "./registered-info.component.html",
+  styleUrls: ["./registered-info.component.scss"]
 })
-export class showBookingComponent implements OnInit {
-  index: number;
+export class RegisteredInfoComponent implements OnInit {
   booking: Booking[] = [];
 
   constructor(
@@ -20,14 +18,13 @@ export class showBookingComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private appService: AppService
-  ) {
-
-  }
+  ) {}
 
   ngOnInit() {
     this.appService.onRefresh();
-    this.appService.bookingChanged.subscribe((data: Booking[]) => {
+    this.appService.bookingSelectedById.subscribe((data: Booking[]) => {
       this.booking = data;
+      console.log("from onInit on registered : "+data);
     });
   }
 
@@ -36,9 +33,4 @@ export class showBookingComponent implements OnInit {
     this.appService.onRefresh();
   }
 
-  onFindById(id: string) {
-    this.appService.onFindById(id);
-    this.router.navigate(["/step3"]);
-    console.log(id);
-  }
 }

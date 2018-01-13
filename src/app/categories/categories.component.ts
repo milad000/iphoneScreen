@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { Router, ActivatedRoute } from "@angular/router";
+
 
 import { Categories } from "../shared/categories.model";
 
@@ -25,7 +27,8 @@ export class CategoriesComponent implements OnInit {
     new Categories("iphone", "X", "./assets/img/iphone-X.jpg")
   ];
 
-  constructor() {
+  constructor(    private router: Router,
+  ) {
     this.rowNumber = [];
     for (let i = 0; i < this.categories.length / 5; i++) {
       this.rowNumber.push(i);
@@ -45,4 +48,9 @@ export class CategoriesComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  onSelectIphone(i:number){
+    console.log(i);
+    this.router.navigate(['/step2'])
+  }
 }

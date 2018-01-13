@@ -59,7 +59,7 @@ router.get("/", function(req, res) {
   res.send("app works!");
 });
 
-//ALL JOBS
+//SEND ALL BOOKING TO /bookings
 router.get("/bookings", function(req, res) {
   booking.find({}, function(err, booking) {
     if (err) {
@@ -71,7 +71,7 @@ router.get("/bookings", function(req, res) {
     }
   });
 });
-//ALL JOBS
+//SEND ALL BOOKING TO ANGULAR APP
 router.get("/booking", function(req, res) {
   booking.find({}, function(err, booking) {
     if (err) {
@@ -81,7 +81,31 @@ router.get("/booking", function(req, res) {
     }
   });
 });
-//ALL JOBS
+//SEND SELECTED BOOKING TO /bookings/:id
+router.get("/bookings/:id", function (req, res) {
+  booking.findById(req.params.id, function (err, booking) {
+      if (err) {
+          res.redirect("/booking");
+      } else {
+          res.render("showBooking", {
+              data: booking
+            });
+            console.log(booking);
+      }
+  });
+});
+//SEND SELECTED BOOKING TO ANGULAR APP
+router.get("/bookingapp/:id", function (req, res) {
+  booking.findById(req.params.id, function (err, booking) {
+      if (err) {
+          res.redirect("/booking");
+      } else {
+          res.send(booking);
+            console.log(booking);
+      }
+  });
+});
+//FORM TO INSERT DATA FROM NODE JS
 router.get("/newbooking", function(req, res) {
   console.log("------get---------------");
   res.render("newbooking.ejs");
@@ -96,7 +120,7 @@ router.get("/newbooking", function(req, res) {
   // });
 });
 
-//CREATE JOBS
+//CREATE NEW BOOKING IN DATABASE
 router.post("/newbooking", function(req, res) {
   console.log("----------------------------");
   console.log(req.body);
@@ -120,8 +144,14 @@ router.post("/newbooking", function(req, res) {
     if (err) {
       res.send("error in create new booking");
     } else {
-      console.log(newbooking);
-      res.redirect("/booking");
+      booking.findOne(req.body.id, function (err, booking) {
+        if (err) {
+            res.redirect("/booking");
+        } else {
+            res.send(newbooking);
+              console.log("newly create booking in mongodb from create section : "+newbooking);
+        }
+    });
     }
   });
 });
@@ -187,7 +217,7 @@ router.post("/newbooking", function(req, res) {
 //     });
 // });
 
-// //DELETE JOBS
+//DELETE BOOKING
 router.delete("/booking/:id", function(req, res) {
   //     booking.findById(req.params.id, function (err, checkUser) {
   //         console.log(req.user.group);
@@ -206,6 +236,7 @@ router.delete("/booking/:id", function(req, res) {
   //         }
   //     });
 });
+
 //ACCESS ERROR
 
 //ISLOGEDIN

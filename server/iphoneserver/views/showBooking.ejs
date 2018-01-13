@@ -1,0 +1,21 @@
+<div class="jobs-item" style="position:relative;">
+    <div class="Sche">
+        <%=data.fullName%>
+    </div>
+    <div class="Amiri">
+        <%=data.email%>
+    </div>
+    <div class="Amiri">
+        <%=data.iphoneModel%>
+    </div>
+    <div class="Amiri">
+        <%=data.phoneNumber%>
+    </div>
+    <div>
+        <%=data.created.toDateString()%>
+    </div>
+    <form class="floatR" action="/booking/<%=data._id%>?_method=DELETE" method="POST">
+        <button style="background-color:transparent; border:none; margin-top:8px; margin-left:20px;">delete
+        </button>
+    </form>
+</div>

@@ -13,11 +13,14 @@ import { PopupComponent } from "./popup/popup.component";
 import { MenuComponent } from "./menu/menu.component";
 import { showBookingComponent } from "./showbooking/showbooking.component";
 import { AppService } from "./app.service";
+import { RegisteredInfoComponent } from './registered-info/registered-info.component';
 
 
 const appRoutes: Routes = [
-  {path: '', component: AppComponent},
-  {path:'#popup', component:AppComponent}
+  {path: 'step1', component: CategoriesComponent},
+  {path:'step2', component: BookingComponent},
+  {path:'step3', component: RegisteredInfoComponent},
+  {path:'admin', component: showBookingComponent},
 ];
 
 @NgModule({
@@ -29,7 +32,8 @@ const appRoutes: Routes = [
     FooterComponent,
     PopupComponent,
     MenuComponent,
-    showBookingComponent
+    showBookingComponent,
+    RegisteredInfoComponent
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule,
   RouterModule.forRoot(appRoutes)],

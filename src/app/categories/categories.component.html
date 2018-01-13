@@ -1,26 +1,19 @@
 <section class="section-categories">
 
-    <div class="grid-on">
-        <div class="row">
-            <div class="col-1-of-2">
-                <h3 class="heading-tertiary u-margin-b-small">How to use css grid classes in a simple calender? </h3>
-                <p class="paragragh">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, exercitationem sequi fuga natus, iusto doloremque
-                    maiores error ratione ipsa molestias sapiente expedita blanditiis similique incidunt minus alias soluta
-                    mollitia tempore!</p>
+        <div class="u-center-text">
+                <h2 class="heading-secondary u-text-to-upper">
+                    first Select your iphone model here:
+                </h2>
             </div>
-            <div class="col-1-of-2">
-            </div>
-        </div>
-    </div>
     <div class="grid-on">
         <div class="row" *ngFor="let row of rowNumber; let i=index">
-            <div class="col-1-of-5 u-margin-t-small" *ngFor="let category of getCurrentCategories(i)">
+            <a  class="col-1-of-5 u-margin-t-small" *ngFor="let category of getCurrentCategories(i); let j=index" (click)="onSelectIphone(j)">
                 <div class="item-box">
                     <img src={{category.imagePath}} alt="" class="item-box__img">
                     <h3 class="heading-quaternary">{{category.name}}</h3>
                     <p>{{category.description}}</p>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </section>

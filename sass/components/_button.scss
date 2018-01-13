@@ -45,13 +45,24 @@
   }
   &--red {
     color: white;
-    background-color: red;
+    background-color: rgba(228, 37, 37, 0.603);
     padding: .5rem 1rem;
-    margin:1rem;
+    margin:.5rem;
 
 
     &::after {
-      background-color: red;
+      background-color: rgb(228, 69, 69);
+      color: white;
+    }
+  }
+  &--info {
+    color: white;
+    background-color: rgba(37, 167, 228, 0.541);
+    padding: .5rem 1rem;
+
+
+    &::after {
+      background-color: rgba(37, 167, 228, 0.541);
       color: white;
     }
   }
