@@ -21,18 +21,19 @@ export class showBookingComponent implements OnInit {
     private route: ActivatedRoute,
     private appService: AppService
   ) {
-    this.appService.onRefresh();
+
   }
 
   ngOnInit() {
-      this.appService.bookingChanged.subscribe((data: Booking[]) => {
-        this.booking = data;
-        console.log(
-          "return of onRefresh() from constructor in showbooking : " + this.booking
-        );
-      });
-      console.log(
-        "return of onRefresh() from constructor in showbooking : " + this.booking
-      );
+    this.appService.onRefresh();
+    this.appService.bookingChanged.subscribe((data: Booking[]) => {
+      this.booking = data;
+    });
+  }
+  onDelete(id: string){
+    this.http.delete('http://192.168.0.109:3000/booking/' + id).subscribe((data: Booking[]) => {
+      console.log(data);
+    });
+    this.appService.onRefresh();
   }
 }

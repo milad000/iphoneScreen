@@ -1,17 +1,18 @@
 <section class="section-book">
     <div class="u-center-text">
         <h2 class="heading-secondary u-text-to-upper">
-            You register here!
+            You registered here!
         </h2>
     </div>
     <div class="grid-on">
         <div class="row">
             <div class="col-1-of-5 u-margin-t-small" *ngFor="let data of booking">
                 <div class="item-box">
-                    <h3 class="heading-quaternary">{{data.fullName}}</h3>
-                    <p>{{data.email}}</p>
-                    <p>{{data.iphoneModel}}</p>
-                    <p>{{data.phoneNumber}}</p>
+                    <h3 class="heading-tertiary">{{data.fullName}}</h3>
+                    <p class="heading-tertiary--p">{{data.email}}</p>
+                    <p class="heading-tertiary--p">{{data.iphoneModel}}</p>
+                    <p class="heading-tertiary--p">{{data.phoneNumber}}</p>
+                    <button class="btn btn--red" (click)="onDelete(data._id)">delete</button>
                 </div>
             </div>
         </div>

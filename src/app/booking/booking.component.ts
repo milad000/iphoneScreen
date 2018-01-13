@@ -31,14 +31,9 @@ export class BookingComponent implements OnInit {
      console.log("you are on onSubmit()");
      const value = form.value;
     //  let newBooking = new Booking(value.fullName,value.email,value.iphoneModel,value.phoneNumber);
-     console.log( value.fullName);
-    //  console.log( JSON.stringify(newBooking));
      this.http.post('http://192.168.0.109:3000/newbooking',form.value).subscribe
      (data => {
-       console.log("date sent : " +data);
-       console.log("form.value : " + form.value);
-       console.log("JSON.stringify(form.value) : " + JSON.stringify(form.value));
-      //  this.router.navigate(['#popup'],{relativeTo: this.route});
+       console.log("data sent : " +data);
      });
   }
 

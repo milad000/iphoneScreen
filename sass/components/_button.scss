@@ -43,6 +43,18 @@
       background-color: white;
     }
   }
+  &--red {
+    color: white;
+    background-color: red;
+    padding: .5rem 1rem;
+    margin:1rem;
+
+
+    &::after {
+      background-color: red;
+      color: white;
+    }
+  }
 
   &::after {
     content: "";
